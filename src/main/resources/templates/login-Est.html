@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login Estudiante</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/Css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logot.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="flex justify-center items-center bg-gradient-to-r from-blue-300 to-green-600">
+<main><br><br>
+<div class="animate-slide-from-top">
+<p class="bg-red-200 border text-red-600 flex justify-center items-center rounded "th:text="${error}"><p><br>
+   
+   <h1 class="text-white text-2xl font-bold flex justify-center">Iniciar sesion como Estudiante</h1><br>
+    <div class="return">
+        <a class="font-sans bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full " style="text-decoration: none"; th:href="@{/}">
+			 <i class="fa-solid fa-circle-left" style="color: #ffffff;"></i><br>
+			</a>
+    </div><br><br>
+    <div>
+		<i class="fa-solid fa-user fa-4x"></i>
+	</div><br>
+    <div>
+        <form th:action="@{/estudiante/login}" method="post">
+            
+            <div class="estid">
+                <label for="name" class="text-white font-sans text-2xl">Nro Identificacion: </label>
+                <input type="text" id="estid" name="estid" placeholder="Ingrese su numero de identificacion..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-300"min="0" step="1" pattern="[0-9]*" required>
+          
+          
+           
+            <div class="password">
+                <label for="name" class="text-white font-sans text-2xl">Contraseña: </label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su numero contraseña..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-300" required>
+          
+          <br><br>
+            <div class="button">
+                <button type="submit"> <strong class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full">Iniciar Sesión</strong></button>
+            </div>
+        </form>
+        </div>
+    </div><br><br>
+</main>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>

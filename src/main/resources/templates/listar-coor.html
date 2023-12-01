@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coordinador</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/icon.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-600 to-blue-300 ">
+	
+	<div class="animate-slide-from-top">
+		<div class="flex justify-center items-center pt-5">
+		<img  th:src="@{/img/usuario.png}"><br><br>
+		</div>	
+	<h1 class="flex justify-center items-center font-sans text-2xl pt-3 text-white">COORDINADOR</h1><br><br>
+	<header class="flex justify-center items-center">	
+		<img th:src="@{/img/logot.png}"><br><br>
+		</header>
+		
+	</div>
+
+
+<main class="animate-slider">
+	<br><br>
+	 <a th:href="@{/}"  class="p-3 text-white font-sans text-lg text-white font-sans bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration:none;">
+			<i class="fa-solid fa-house fa-beat" style="color: #ffffff;"></i>&#160; Inicio</a><br><br><br>
+            <a class="p-3 text-lg items-center font-sans bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+            style="text-decoration: none"
+            th:href="@{/coordinador/login}"
+            title="Ir atrás">
+          <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i> &#160;Cerrar sesión
+        </a><br><br><br>
+        
+	 <a th:href="@{/coordinador/newe}"  class="p-3 text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration:none;">
+				Agregar  <i class="fa-solid fa-plus fa-bounce" style="color: #ffffff;"></i>
+            </a><br><br>
+   <table class="table table-striped table-bordered bg-gradient-to-r from-blue-500  to-cyan-300">
+    <thead class="bg-gradient-to-r from-green-500 to-green-700">
+        <tr class="text-white">
+            <th>identificacion Estudiante</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Registro</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+            <th>Nota Global</th>
+            <th>Nivel</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+            <th>Ver</th>
+        </tr>
+    </thead>
+    <tbody>
+		
+        <tr th:each="estudiante: ${estudiante}">
+            <td th:text="${estudiante.Estid}"></td>
+            <td th:text="${estudiante.nombre}"></td>
+            <td th:text="${estudiante.apellido}"></td>
+            <td th:text="${estudiante.correo}"></td>
+            <td th:text="${estudiante.IdRegistro}"></td>
+            <td th:text="${estudiante.telefono}"></td>
+            <td class="estado" th:text="${estudiante.estado}"></td>
+            <td id="prom" th:text="${notasPromedioMap[estudiante.id]}"></td>
+            <td id="level" class="cambiar-color" th:text="${nivelp[estudiante.id]}"></td>
+            <td><a th:href="@{/coordinador/edit/} + ${estudiante.id}"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #3d67e6;"></i> </a></td>
+            <td><a th:href="@{/coordinador/delete/} + ${estudiante.id}" onclick="return confirm('¿Estás seguro que quieres eliminar?');"><i class="fa-solid fa-trash fa-lg" style="color: #f9242f;"></i></a></td>
+            <td><a th:href="@{/coordinador/verc/} + ${estudiante.id}" ><i class="fa-solid fa-eye fa-lg" style="color: #edc80c;"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+</main>
+ <div th:replace="footer :: footer"></div>  
+<script th:src="@{/Js/App.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

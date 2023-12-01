@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Pruebas SaberPro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logot.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-300 to-blue-500">
+	<header id="hd" class="flex justify-center items-center">
+	<div class="animate-slide">
+	<nav class="bg-gradient-to-r from-sky-300 from-10% via-emerald-500 via-30% to-blue-600 to-90% ... p-2 shadow-lg rounded h-[80px] w-[800px]">
+    <div>
+        <div class="flex  items-center">
+            <!-- Logo o Nombre del Sitio -->
+            <img th:src="@{/img/logot.png}" class="h-[65px] w-[115px] ml-4 mr-8">
+            <!-- Enlaces de Navegación -->
+            
+            <div class="p-3 bg-green-600 rounded-full hover:bg-green-700 ">
+		<div class="flex justify-center items-center mt-2">
+			
+		<a  class="text-white" th:href="@{/estudiante/login}"style="text-decoration:none;">
+		<i class="fa-solid fa-user fa-lg fa-beat" style="color: #ffffff;"></i>&#160;Estudiante 
+		</a>
+		</div>
+	</div>&#160;&#160;
+	
+	<div class="p-3 bg-blue-600 rounded-full hover:bg-blue-700">
+		
+		<div class="flex justify-center items-center mt-2">
+		<a class="text-white "th:href="@{/coordinador/login}" style="text-decoration:none;">
+		<i class="fa-solid fa-user-tie fa-lg fa-beat" style="color: #ffffff;"></i>&#160;Coordinador
+		</a>
+		</div>
+		
+	</div >
+                    
+        </div>
+    </div>
+		</nav>
+	</div>
+	</header><br><br><br><br>
+
+<main class="p-10">
+
+	
+<div class="animate-slide-right">	
+	<div  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ul>
+
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/img/img1.png}" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/img2.png}" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/img3.png}" alt="Imagen 3">
+                </div>
+                  <div class="carousel-item">
+                    <img th:src="@{/img/img4.png}" alt="Imagen 4">
+                </div>
+            </div>
+
+            <!-- Controles del carrusel -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<i class="fa-solid fa-circle-chevron-left fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class="fa-solid fa-circle-chevron-left fa-rotate-180 fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div></div><br><br>
+    
+   
+    
+    
+	
+	<div class="card p-3">
+        <img class="p-3" th:src="@{/img/banner.png}" alt="acerca de ">
+  <div class="card-body">
+    
+    <p class="card-text text-lg">El examen de Estado de la Calidad de la Educación Superior, Saber Pro, es un instrumento de evaluación estandarizada para la medición externa de la calidad de la educación superior que evalúa las competencias de los estudiantes que están próximos a culminar los distintos programas profesionales universitarios.<br><br>
+
+Saber Pro está compuesto por un grupo de competencias genéricas y otro de específicas. El primer conjunto evalúa cinco módulos genéricos: Lectura Crítica, Razonamiento Cuantitativo, Competencias Ciudadanas, Comunicación Escrita e Inglés. <br><br>El segundo grupo está compuesto por módulos asociados a temáticas y contenidos específicos que los estudiantes pueden presentar de acuerdo con su área de formación. Para conocer los módulos ofertados para la próxima aplicación del examen, consulta la opción 3. Oferta de módulos específicos examen Saber Pro en el menú principal.
+Si quieres conocer más información sobre estos módulos te invitamos a consultar las infografías disponibles al final de esta sección.</p>
+    <br><br><p class="card-text"><small class="text-muted">20/08/2022</small></p>
+  </div>
+  
+  </div><br><br>
+  
+  
+  
+	<div class="card p-3">
+        <img class="p-3" th:src="@{/img/insc.jpg}" alt="acerca de ">
+  <div class="card-body">
+    
+    <p class="card-text text-lg">Inscripciones prueba PreSaber  
+
+Las Inscripciones estarán disponibles a partir de la fecha establecida en el cronograma de cada aplicación. Para realizar la inscripción puede seguir el link:&#160;<a class="text-blue-500" href="https://www.icfesinteractivo.gov.co/prisma-web/pages/administracion/autenticacion/autenticacionIcfes.jsf?faces-redirect=true#No-back-button">Visitar el enlace...</a></p>
+    <br><br><p class="card-text"><small class="text-muted">20/08/2022</small></p>
+  </div>
+	</div><br><br><br>
+	<div class="flex justify-center items-center">
+	<div id="video1"></div>&nbsp;&nbsp;&nbsp;
+	<div id="video2"></div>&nbsp;&nbsp;&nbsp;
+	<div id="video3"></div>&nbsp;&nbsp;&nbsp;
+	</div>
+ </div></div><br><br>	
+  <button class="btn-scrolltop" id="btn_scrolltop">
+    <i class="fas fa-chevron-up fa-lg fa-beat"></i>
+  </button>
+</main>
+ <div th:replace="footer :: footer"></div>  
+<script th:src="@{/Js/up.js}"></script>
+<script th:src="@{/Js/App.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

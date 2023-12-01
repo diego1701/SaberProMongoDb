@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Formulario Estudiante</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logot.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="flex justify-center items-center bg-gradient-to-r from-cyan-300 to-blue-600 ">
+<main ><br><br>
+<div class="animate-slider">
+	<h1 class="flex justify-center items-center font-sans text-3xl pt-3 text-white">Agregar un nuevo Estudiante</h1><br><br>
+    <div class="return">
+        <a class="font-sans bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full " style="text-decoration: none"; th:href="@{/coordinador/listar-estudiantes}">
+			 <i class="fa-solid fa-circle-left fa-beat" style="color: #ffffff;"></i><br>
+			</a>
+    </div><br>
+    <div>
+		 <i class="fa-solid fa-user fa-4x"></i><br><br>
+	</div>
+    <div class="cont">
+        <form th:action="@{/coordinador/formc}" th:object="${estudiante}" method="post" id="formu">
+            <input type="hidden" th:field="*{id}">
+            <div class="nombre">
+                <label for="name" class="text-white font-sans text-2xl">Nombre: </label>
+                <input type="text" id="name" th:field="*{nombre}" placeholder="Ingrese el nombre..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            <div class="apellido">
+                <label for="name" class="text-white font-sans text-2xl">Apellido: </label>
+                <input type="text" id="apellido" th:field="*{apellido}" placeholder="Ingrese el apellido..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Correo: </label>
+                <input type="text" id="nro" th:field="*{correo}" placeholder="Ingrese el correo..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            
+             <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Identificacion: </label>
+                <input type="text" id="nro" th:field="*{Estid}" placeholder="Ingrese el numero..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Password: </label>
+                <input type="text" id="nro" th:field="*{password}" placeholder="Ingrese la contraseña..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            
+             <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Telefono: </label>
+                <input type="text" id="nro" th:field="*{telefono}" placeholder="Ingrese el nro de telefono..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            
+                    
+            <div class="form-group">
+   				 <label for="posicion"class="text-white font-sans text-2xl">Estado:</label>
+    				<select id="estado" th:field="*{estado}" name="posicion" class="form-control" required>
+        				<option value="">Estado estudiante...</option>
+        				<option value="Activo">Activo</option>
+        				<option value="Anulado">Anulado</option>
+        				
+    				</select>
+			</div>
+			
+			<div class="form-group">
+   				 <label for="posicion"class="text-white font-sans text-2xl">Rol:</label>
+    				<select id="posicion" th:field="*{rol}" name="posicion" class="form-control" required>
+        				<option value="Estudiante" readonly="readonly">Estudiante</option>
+    				</select>
+			</div>
+			
+			
+			
+			<div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Registro: </label>
+                <input type="text" id="nro" th:field="*{IdRegistro}" placeholder="Ingrese el registro..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            
+            <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje ciencias: </label>
+                <input type="text" id="puntajeciencias" th:field="*{puntaje_ciencias}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje competencias: </label>
+                <input type="text" id="puntajecompetencias" th:field="*{puntaje_competencias}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+            
+            
+             <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje comunicacion: </label>
+                <input type="text" id="puntajecomunicacion" th:field="*{puntaje_comunicacion}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+		
+			 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje Diseño: </label>
+                <input type="text" id="puntajediseno" th:field="*{puntaje_dis}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+		
+		 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje ingles: </label>
+                <input type="text" id="puntajeIngles" th:field="*{puntaje_ingles}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+		
+		 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje lectura: </label>
+                <input type="text" id="puntajelectura" th:field="*{puntaje_lectura}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+		
+			 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje proyectos: </label>
+                <input type="text" id="puntajeproyectos" th:field="*{puntaje_proyectos}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+			
+			
+			 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Puntaje razonamiento: </label>
+                <input type="text" id="puntajerazonamiento" th:field="*{puntaje_razonamiento}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+			
+			
+			 <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Nivel de ingles: </label>
+                <input type="text" id="nivelingles" th:field="*{nivel_ingles}" placeholder="Ingrese el puntaje..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" min="1" max="1" pattern="[1-3]*" required>
+            </div><br>
+			
+			
+			<div id="error-messages" th:classappend="${errorMessage} ? 'bg-red-100 border border-red-700 text-red-700 px-4 py-3 rounded relative' : ''" th:text="${errorMessage}">
+			
+			</div><br>
+           
+            <div class="button">
+                <button type="submit"> <strong class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full">Agregar</strong></button>
+            </div>
+        </form>
+    </div><br><br>
+    
+    </div>
+ <button class="btn-scrolltop" id="btn_scrolltop">
+    <i class="fas fa-chevron-up fa-lg fa-beat"></i>
+  </button>
+    
+</main>
+<script th:src="@{/Js/up.js}"></script>
+    <script th:src="@{/Js/App.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

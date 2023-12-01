@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Detalles Estudiante</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/icon.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-200 to-blue-400 ">
+	<div class="animate-slide-from-top">
+		<div class="flex justify-center items-center pt-5">
+		<img  th:src="@{/img/usuario.png}"><br><br>
+		</div>	
+		<h1 class="flex justify-center items-center font-sans text-2xl pt-3 text-white">ESTUDIANTE</h1><br><br>
+	<header class="flex justify-center items-center">
+		<img th:src="@{/img/logot.png}"><br><br>
+		</header>
+	</div>
+
+    <main class="animate-slide-from-bottom"><br>
+        <div class="flex justify-center items-center">
+			<a th:href="@{/}"  class="p-3 text-white font-sans text-lg text-white font-sans bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration:none;">
+			<i class="fa-solid fa-house fa-beat" style="color: #ffffff;"></i>&#160; Inicio
+            </a>&#160;&#160;&#160;
+        <a class="p-3 flex justify-center text-lg items-center font-sans bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+            style="text-decoration: none"
+            th:href="@{/estudiante/login}"
+            title="Ir atrás">
+          <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i> &#160;Cerrar sesión
+        </a>
+        </div>
+        <br><br>
+        
+           <div class="d-flex align-items-center justify-content-center rounded ">
+            <div class="cont2 p-3 m-3 w-50 rounded ">
+                <div class="rounded ">
+				   <ul class=" list-group rounded hover:scale-110 hover:shadow-lg hover:rounded-lg transition-transform duration-300">
+				    <li class="list-group-item rounded ">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Nombre estudiante:</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.nombre}"></p><br>
+				     
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Apellido Estudiante</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.apellido}"></p><br>
+				       
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Correo</p>
+				        <p class="flex justify-center items-center puntaje" th:text="${estudiante.correo}"></p><br>
+				       
+				    </li>
+				    
+				     <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Telefono</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.telefono}"></p><br>
+				     
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Nota Global</p>
+				        <p id="prom" class="flex justify-center text-2xl font-bold" th:text="${promedioPuntajes}"></p><br>
+				          <p id="level" class="cambiar-color" th:text="${nivelPromedio}"></p>
+				    </li>
+			    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Nivel ingles</p>
+				        <p id="prom" class="flex justify-center text-2xl font-bold" th:text="${nivelingles}"></p><br>
+				          
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Estado</p><br>
+				        <p class="estado" th:text="${estudiante.estado}"></p><br>
+				        
+				    </li>
+				    
+				 
+				    
+				</ul>
+
+                </div>
+            </div>
+        </div>
+        
+         
+       
+        
+        <div  class="flex justify-center rounded-full">
+ <div id="divi" class="w-[150px] flex justify-center px-2 py-2 rounded-full bg-blue-600 text-lg hover:bg-blue-700 ">       
+<a href="#vv" id="mostrarContenido" class="font-bold text-white" style="text-decoration:none">&#160;Ver Notas</a>
+ </div>
+ <div id="vv"></div>
+        </div><br><br>
+        
+        
+	
+        <div  class="d-flex align-items-center justify-content-center rounded">
+            <div class="container p-3 m-3 w-50">
+                <div class=" bg-light">
+				   <ul class="list-group rounded hover:scale-110 hover:shadow-lg hover:rounded-lg transition-transform duration-300">
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Ciencias</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.puntaje_ciencias}"></p><br>
+				        <p class="cambiar-color" th:text="${nivelCiencias}"></p><!-- Elemento de nivel asociado al puntaje Ciencias -->
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje ingles</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.puntaje_ingles}"></p><br>
+				        <p class="cambiar-color" th:text="${nivelIngles}"></p> <!-- Elemento de nivel asociado al puntaje Inglés -->
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Diseño</p>
+				        <p class="flex justify-center items-center puntaje" th:text="${estudiante.puntaje_dis}"></p><br>
+				         <p class="cambiar-color" th:text="${nivelDiseno}"></p> <!-- Elemento de nivel asociado al puntaje Diseño -->
+				    </li>
+				    
+				     <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Competencias</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.puntaje_competencias}"></p><br>
+				        <p class="cambiar-color" th:text="${nivelCompetencias}"></p><!-- Elemento de nivel asociado al puntaje Ciencias -->
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Comunicacion</p>
+				        <p class="flex justify-center puntaje" th:text="${estudiante.puntaje_comunicacion}"></p><br>
+				        <p class="cambiar-color" th:text="${nivelComunicacion}"></p> <!-- Elemento de nivel asociado al puntaje Inglés -->
+				    </li>
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Lectura</p>
+				        <p class="flex justify-center items-center puntaje" th:text="${estudiante.puntaje_lectura}"></p><br>
+				         <p class="cambiar-color" th:text="${nivelLectura}"></p> <!-- Elemento de nivel asociado al puntaje Diseño -->
+				    </li>
+				    
+				     <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Proyectos</p>
+				        <p class="flex justify-center items-center puntaje" th:text="${estudiante.puntaje_proyectos}"></p><br>
+				         <p class="cambiar-color" th:text="${nivelProyectos}"></p> <!-- Elemento de nivel asociado al puntaje Diseño -->
+				    </li>
+				    
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center">Puntaje Razonamiento</p>
+				        <p class="flex justify-center items-center puntaje" th:text="${estudiante.puntaje_razonamiento}"></p><br>
+				         <p class="cambiar-color" th:text="${nivelRaz}"></p> <!-- Elemento de nivel asociado al puntaje Diseño -->
+				    </li>
+				    
+				    
+
+				    <li class="list-group-item">
+				        <p class="font-bold bg-blue-300 flex justify-center items-center text-2xl"><strong>Puntaje Global</strong></p>
+				          <p class="flex justify-center items-center puntaje" th:text="${promedioPuntajes}"></p><br>
+				          <p class="cambiar-color" th:text="${nivelPromedio}"></p>
+				    </li>
+				    
+				    
+				    
+				    
+				    
+				</ul>
+
+                </div>
+            </div>
+        </div><br><br><br>
+        
+     
+    </main>
+  <div th:replace="footer :: footer"></div>  
+<script th:src="@{/Js/App.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>
